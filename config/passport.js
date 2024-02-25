@@ -8,7 +8,7 @@ module.exports = function (passport) {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: (process.env.NODE_ENV === 'production') ? 'https://ararsobusiness.onrender.com/auth/google/callback' : '/auth/google/callback',
+        callbackURL: (process.env.NODE_ENV === 'production') ? 'https://waajjiragalii.onrender.com/auth/google/callback' : '/auth/google/callback',
       },
       async (accessToken, refreshToken, profile, done) => {
         const newUser = {
