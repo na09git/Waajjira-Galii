@@ -1,0 +1,152 @@
+<div class="container row " style="padding-top: 6%; padding-right:4%; padding-left:10px;">
+    <div class=" bg-info bg-opacity-10 border border-info border-start-0 rounded-end"
+        style="padding-top: 20px; padding-right:10%; padding-left:10%;">
+
+        <div class="row text-center" style="align-items: center;">
+            <h3 class="bg-primary p-1" style="--bs-bg-opacity: .2; padding-left: 40px; padding-top: 70px;">
+                Edit Selled Information</h3>
+        </div>
+
+        <div class="row " style="padding-left: 10px;">
+            <form action="/sell/{{sell._id}}" method="POST" class="col-md-8 col-lg-8" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="post">
+                <!-- 1 Name--->
+                <div class="mb-2 row" style="padding-top:20px;">
+                    <div class="col-3">
+                        <label for="name" class="form-label"> Seller Name:</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="seller" name="seller" value="{{sell.seller}}">
+                    </div>
+                </div>
+                <!-- 2 buyer_name--->
+                <div class="mb-2 row">
+                    <div class="col-3">
+                        <label for="from_seller" class="form-label">Buyer Name:</label>
+                    </div>
+                    <div class="col">
+                        <input type="buyer_name" class="form-control" id="buyer_name" name="buyer_name"
+                            value="{{sell.buyer_name}}">
+                    </div>
+                </div>
+                <!-- 3 Material -->
+                <div class="mb-2 row">
+                    <div class="col-3">
+                        <label for="material" class="form-label">Material:</label>
+                    </div>
+                    <div class="col">
+                        <select class="form-select" id="material" name="material">
+                            <option value="Dinicha" {{#if (eq sell.material 'Dinicha' )}}selected{{/if}}>Dinicha
+                            </option>
+                            <option value="Karot" {{#if (eq sell.material 'Karot' )}}selected{{/if}}>Karot</option>
+                            <option value="Kurumba" {{#if (eq sell.material 'Kurumba' )}}selected{{/if}}>Kurumba
+                            </option>
+                            <option value="Qayasir" {{#if (eq sell.material 'Qayasir' )}}selected{{/if}}>Qayasir
+                            </option>
+                            <option value="Shunkurtaa" {{#if (eq sell.material 'Shunkurtaa' )}}selected{{/if}}>
+                                Shunkurtaa
+                            </option>
+                            <option value="Shukaar" {{#if (eq sell.material 'Shukaar' )}}selected{{/if}}>Shukaar
+                            </option>
+                            <option value="Timaatim" {{#if (eq sell.material 'Timaatim' )}}selected{{/if}}>Timaatim
+                            </option>
+                            <option value="Luqqaa" {{#if (eq sell.material 'Luqqaa' )}}selected{{/if}}>Luqqaa</option>
+                            <option value="Joniya" {{#if (eq sell.material 'Joniya' )}}selected{{/if}}>Joniya</option>
+                            <option value="Car Material" {{#if (eq sell.material 'Car Material' )}}selected{{/if}}>Car
+                                Material</option>
+                            <option value="Building Material" {{#if (eq sell.material 'Building Material'
+                                )}}selected{{/if}}>Building Material</option>
+                            <option value="Other" {{#if (eq sell.material 'Other' )}}selected{{/if}}>Other</option>
+                        </select>
+
+                    </div>
+                </div>
+                <!-- 4 kilogram --->
+                <div class="mb-2 row">
+                    <div class="col-3">
+                        <label for="kilogram" class="form-label">Kilogram:</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control " id="kilogram" name="kilogram"
+                            value="{{sell.kilogram}}">
+                    </div>
+                </div>
+
+                <!-- 5 Amount in Birr --->
+                <div class="mb-2 row">
+                    <div class="col-3">
+                        <label for="birr" class="form-label">Amount in Birr:</label>
+                    </div>
+                    <div class="col">
+                        <input type="birr" class="form-control " id="birr" name="birr" value="{{sell.birr}}">
+                    </div>
+                </div>
+                <!-- 6 Note --->
+                <div class="mb-2 row">
+                    <div class="col-3">
+                        <label for="body" class="form-label">Note:</label>
+                    </div>
+                    <div class="col">
+                        <textarea class="form-control" id="body" name="note">{{sell.note}}</textarea>
+
+                    </div>
+                </div>
+                <!-- 7 Phone --->
+                <div class="mb-2 row">
+                    <div class="col-3">
+                        <label for="phone" class="form-label">Phone :</label>
+                    </div>
+                    <div class="col">
+                        <input type="tel" class="form-control " id="phone" name="phone" value="{{sell.phone}}">
+                    </div>
+                </div>
+                <!-- 8 status --->
+                <div class="mb-2 row">
+                    <div class="col-3">
+                        <label for="status" class="form-label">Status :</label>
+                    </div>
+                    <div class="col">
+                        <select class="form-select" id="status" name="status">
+                            <option value="Paid" {{#if (eq sell.status 'Paid' )}}selected{{/if}}>Paid
+                            </option>
+                            <option value="Not-Paid" {{#if (eq sell.status 'Not-Paid' )}}selected{{/if}}>
+                                Not-Paid
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!-- 9 car_id --->
+                <div class="mb-2 row">
+                    <div class="col-3">
+                        <label for="car_id" class="form-label">Car Id(Targaa Makinaa) :</label>
+                    </div>
+                    <div class="col">
+                        <input type="car_id" class="form-control " id="car_id" name="car_id" value="{{sell.car_id}}">
+                    </div>
+                </div>
+
+                <!-- 10 Image--->
+                <div class="mb-2 row">
+                    <div class="col-3">
+                        <label for="image" class="form-label">Change Image :</label>
+                    </div>
+                    <div class="col">
+                        <input type="file" class="form-control" id="image" name="image">
+                        {{#if sell.imageBase64}}
+                        <img src='data:{{sell.contentType}};base64,{{sell.imageBase64}}' alt="{{sell.name}}"
+                            width="100">
+                        {{else}}
+                        <img src="images/no_image.png" alt="{{sell.name}}" width="100" class="img-thumbnail">
+                        {{/if}}
+                    </div>
+                </div>
+                <!-- 11 Action--->
+                <div class="mb-2" style="padding-left: 120px;">
+                    <input style="padding-left: 10%; padding-right: 10%;" type="submit" value="Save"
+                        class="btn btn-primary">
+                    <a style="padding-left: 10%; padding-right: 10%;" href="/sells" class="btn btn-warning">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

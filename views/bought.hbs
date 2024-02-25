@@ -1,0 +1,137 @@
+<script src="/js/reports.js"></script>
+
+<div>
+    {{> _addbuy}}
+</div>
+
+<div class="pagetitle">
+    <h1> Material Bought by Sena Business</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">Bought</li>
+        </ol>
+    </nav>
+</div>
+<!-- End Page Title -->
+
+
+<div style="padding: 10px;">
+    <h3 style="padding-top: 35px; padding-left: 38px;">Welcome {{name}}</h3>
+    <p style="padding-left: 20px;">This Are bought Materials List</p>
+
+    <p style="padding-left: 20px"> This Are Number of Paid Vs Not-Paid </p>
+
+    <!-- Add these h6 tags where you want to display the counts -->
+    <span style="color: red;">|</span>
+    <h6 id="paidCount"></h6>
+    <span style="color: red;">|</span>
+    <h6 id="notPaidCount"></h6>
+    <span style="color: red;">|</span>
+    <h6 id="weeklyTotalBirr"></h6>
+    <span style="color: red;">|</span>
+    <h6 id="monthlyTotalBirr"></h6>
+    <span style="color: red;">|</span>
+    <h6 id="totalBirr"></h6>
+    <!-- Display total Birr amount here -->
+
+    <!-- Display total Birr amount here -->
+
+    {{#if buy}}
+    {{! Your existing table code }}
+    <table class="table table-striped w-100 table-responsive " id="data_buy">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Image</th>
+                <th>Buyer</th>
+                <th>Material</th>
+                <th>From_buyer</th>
+                <th>Phone</th>
+                <th>Kilogram</th>
+                <th>Birr</th>
+                <th>Status</th>
+                <th class="text-center">Note</th>
+                <th class="text-center">Date</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each buy as |row index|}}
+            <tr>
+                {{!-- 1 Index --}}
+                <td style="padding: 2px;" class="text-center">{{index}}</td>
+                {{!-- 2 Image --}}
+                <td style="padding: 2px;">
+                    {{#if row.imageBase64}}
+                    <a href="data:{{row.contentType}};base64,{{row.imageBase64}}" data-gallery="portfolio-gallery-app"
+                        class="glightbox img-fluid post-author-img flex-shrink-0">
+                        <img src='data:{{row.contentType}};base64,{{row.imageBase64}}' alt="sell image"
+                            class="img-fluid" width="50">
+                    </a>
+                    {{else}}
+                    <img src="images/no_image.png" width="50" class="img-thumbnail">
+                    {{/if}}
+                </td>
+                {{!-- 3 buyer_name --}}
+                <td style="padding: 2px;">{{row.buyer_name}}</td>
+                {{!-- 4 material --}}
+                <td style="padding: 2px;">{{row.material}}</td>
+                {{!-- 5 from_seller --}}
+                <td style="padding: 2px;">{{row.from_seller}}</td>
+                {{!-- 6 phone --}}
+                <td style="padding: 2px;">{{row.phone}}</td>
+                {{!-- 7 kilogram --}}
+                <td style="padding: 2px;">{{row.kilogram}}</td>
+                {{!-- 8 birr --}}
+                <td style="padding: 2px;">{{row.birr}}</td>
+                {{!-- 9 status --}}
+                <td style="padding: 2px;">
+                    <h6 class="card-title p-2 d-block " style="align-items:center;padding-left: 50px; padding-right: 40px;
+                        {{#eq row.status 'Paid'}}background-color: #9EE47E;width: 100px;
+                        {{else}}background-color: #FF3232; width: 100px;
+                        {{/eq}}">
+                        <span class="dash-gender text-center">
+                            {{row.status}}
+                        </span>
+                    </h6>
+                </td>
+                {{!-- 8 note --}}
+                <td style="padding: 2px;"> {{stripTags (truncate row.note 50)}}</td>
+
+                {{!-- 12 Date --}}
+                <td style="padding: 2px;" class="text-center">{{formatDate row.createdAt 'MMMM Do YYYY, h:mm:ss a'}}
+                </td>
+                {{!-- 13 Action --}}
+                <td style="padding: 2px;">
+                    <div style="display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr)">
+                        <div>
+                            <a href="/buy/{{row._id}}" class="btn p-2 btn-float  text-primary">
+                                <i class="fas fa-eye fa-lg mx-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="/buy/edit/{{row._id}}" class="btn p-2 btn-float  text-success">
+                                <i class="fas fa-edit fa-lg mx-1"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <form action="/buy/{{row._id}}" method="POST" id="delete-form">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn text-danger" style="z-index: 100;">
+                                    <i class="fas fa-trash fa-lg mx-1"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    {{else}}
+    <p>No Bought to Display !</p>
+    {{/if}}
+</div>

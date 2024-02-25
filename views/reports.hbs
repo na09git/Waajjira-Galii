@@ -1,0 +1,76 @@
+<div>
+    {{> _addreport}}
+</div>
+
+<!-- body -->
+<div style="padding-top: 100px; padding-left: 60px; padding-right: 60px; padding: 40px;">
+    <h3 style="padding-top: 45px; padding-left: 38px;">Welcome {{name}}</h3>
+    <p style="padding-left: 90px;">Here are Reports</p>
+
+
+
+    <!-- Your existing table code -->
+    <table class="table table-striped w-100 table-responsive" id="data_report">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each report as |row index| }}
+            <tr style="text-align:center;">
+                {{!-- 1 index --}}
+                <td style="padding: 2px;">{{index}}</td>
+
+                {{!-- 2 image --}}
+                <td style="padding: 2px;">
+                    {{#if row.imageBase64}}
+                    <a href="data:{{row.contentType}};base64,{{row.imageBase64}}" data-gallery="portfolio-gallery-app"
+                        class="glightbox img-fluid post-author-img flex-shrink-0">
+                        <img src='data:{{row.contentType}};base64,{{row.imageBase64}}' alt="news image"
+                            class="img-fluid" width="50">
+                    </a>
+                    {{else}}
+                    <img src="images/no_image.png" width="50" class="img-thumbnail">
+                    {{/if}}
+                </td>
+                {{!-- 3 title --}}
+                <td style="padding: 2px;">{{row.title}}</td>
+                {{!-- 4 Body --}}
+                <td class="card-body card-text text-center">
+                    <p class="card-title">{{stripTags (truncate row.body 50)}}</p>
+                </td>
+                {{!-- 5 Status --}}
+                <td style="padding: 2px; 
+                            {{#eq row.status 'Public'}}background-color: #d8d8d8;
+                            {{else}}background-color:  #fcede6;
+                            {{/eq}}">
+                    <span class="dash-status">{{row.status}}</span>
+                </td>
+                {{!-- 6 Date --}}
+                <td style="padding: 2px;">{{formatDate row.createdAt 'MMMM Do YYYY, h:mm:ss a'}} </td>
+                {{!-- 7 Action --}}
+                <td style="padding: 2px;">
+                    <div style="display: grid; gap: 2x; grid-template-columns: repeat(3, 1fr)">
+                        <div>
+                            <a href="/report/{{row._id}}" class="btn p-2 btn-float  text-primary">
+                                <i class="fas fa-eye fa-lg mx-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>

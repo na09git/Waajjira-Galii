@@ -1,0 +1,110 @@
+<div class="container" style="padding-top: 25px; padding-bottom: 20px;">
+    <div class="row">
+        <div class="col-md-8" style="padding-right: 50px; padding-left: 50px;">
+            <div class="row">
+                <div class="col text-end">
+                    <h3>{{buy.name}}</h3>
+                </div>
+                <div class="col">
+                    <a href="/buy/edit/{{buy._id}}" class="btn p-1 btn-float text-primary">
+                        <i class="fas fa-edit fa-2x mx-1"></i>
+                    </a>
+                </div>
+            </div>
+            {{!-- 1 --}}
+            <div class="card ">
+                <img src="data:{{buy.contentType}};base64,{{buy.imageBase64}}" width="auto" height="230"
+                    class="buy image">
+            </div>
+
+            <div class="p-3 card buy">
+                <div class="card-content">
+                    {{!--2 Name --}}
+                    <div class="p-2" style="padding-left: 50px;">
+                        <span>◇ Name :</span>
+                        <span style="padding-left: 40px;">{{buy.buyer_name}}</span>
+                    </div>
+                    <hr>
+                    {{!--3 Material --}}
+                    <div class="p-2" style="padding-left: 50px;">
+                        <span>◇ Material :</span>
+                        {{buy.material}}</a>
+                    </div>
+                    {{!--4 from_seller --}}
+                    <div class="p-2" style="padding-left: 50px;">
+                        <span>◇ Material is bought From (Seller) :</span>
+                        {{buy.from_seller}}</a>
+                    </div>
+                    {{!--5 phone --}}
+                    <div class="p-2" style="padding-left: 50px;">
+                        <span>◇ Phone : </span>
+                        <span style="padding-left: 40px;">
+                            <a href="tel:  {{buy.phone}} ">
+                                {{buy.phone}}
+                            </a>
+                        </span>
+                    </div>
+                    {{!--6 Kilogram --}}
+                    <div class="p-2" style="padding-left: 50px;">
+                        <span>◇ Kilogram :</span>
+                        {{buy.kilogram}}
+                    </div>
+                    {{!--7 Birr --}}
+                    <div class="p-2" style="padding-left: 50px;">
+                        <span>◇ Birr :</span>
+                        {{buy.birr}}</a>
+                    </div>
+                    {{!--8 Note --}}
+                    <h6 class="p-2" style="padding-bottom: 10px;">
+                        <span>◇ Note :</span>
+                        {{stripTags body }}
+                    </h6>
+                    {{!--9 status --}}
+                    <div class="p-2" style="padding-left: 50px;">
+                        <span>◇ Status : </span>
+                        <h6 class="card-title p-2 d-block " style="align-items:center;padding-left: 50px; padding-right: 40px;
+                        {{#eq buy.status 'Paid'}}background-color: #9EE47E;width: 100px;
+                        {{else}}background-color: #FF3232; width: 100px;
+                        {{/eq}}">
+                            <span class="dash-gender text-center">
+                                {{buy.status}}
+                            </span>
+                        </h6>
+                    </div>
+                    {{!--10 Registered Date --}}
+                    <div class="p-2" style="padding-left: 50px;">
+                        <span>◇ Registered Date : </span>
+                        <span style="padding-left: 40px;"> {{formatDate buy.createdAt 'MMMM Do YYYY, h:mm:ss
+                            a'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="padding-left: 45px; padding-right: 45px; padding-top: 25px; ">
+            <div class="card text-center">
+                <div class="card-content">
+                    <div style="padding-top: 10px;">
+                        <span class="card-title">{{buy.user.displayName}}</span>
+                    </div>
+                    <div style="padding: 7px;">
+                        <img src="{{buy.user.image}}" class="rounded-circle responsive-img img-small"
+                            alt="buy poster image" style="height: 150px; width: 150px;">
+                    </div>
+                    <hr>
+                    <div class="card-action" style="padding-bottom: 13px;">
+                        <button type="button" class="btn  btn-primary link-unstyled text-decoration-none"
+                            style="background-color: #3498db; border-color: #3498db; "
+                            onmouseover="this.style.backgroundColor='#2980b9'"
+                            onmouseout="this.style.backgroundColor='#3498db'"
+                            onclick="window.location.href='/buy/user/{{buy.user._id}}'">
+                            More From {{buy.user.firstName}}
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

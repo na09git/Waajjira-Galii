@@ -1,0 +1,127 @@
+<div class="pagetitle">
+    <h1>Detail Sell</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">Sell</li>
+
+        </ol>
+    </nav>
+</div>
+<!-- End Page Title -->
+
+<div class="container" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="row">
+        <div class="col-md-8" style="padding-right: 50px; padding-left: 50px;  padding-top: 5px;">
+            <div class="row">
+                <div class="col text-end">
+                    <h3>{{sell.name}}</h3>
+                </div>
+                <div class="col">
+                    <a href="/sell/edit/{{sell._id}}" class="btn p-1 btn-float text-primary">
+                        <i class="fas fa-edit fa-2x mx-1"></i>
+                    </a>
+                </div>
+            </div>
+            {{!-- 1 Image --}}
+            <div class="card ">
+                {{#if sell.imageBase64}}
+                <img src='data:{{sell.contentType}};base64,{{sell.imageBase64}}' width="auto" height="320"
+                    class="sell image">
+                {{else}}
+                <img src="images/no_image.png" width="auto" height="230" class="img-thumbnail">
+                {{/if}}
+            </div>
+
+            <div class="p-3 card sell">
+                <div class="card-content">
+                    {{!--2 Name --}}
+                    <div style="padding-left: 50px;  padding-top: 10px;">
+                        <span>◇ Name :</span>
+                        <span style="padding-left: 40px;">{{sell.seller}}</span>
+                    </div>
+                    <hr>
+                    {{!-- 3 buyer_name --}}
+                    <div style="padding-left: 50px;  padding-top: 10px;">
+                        <span>◇ Material seller :</span>
+                        {{sell.buyer_name}}</a>
+                    </div>
+                    {{!--4 Material --}}
+                    <div style="padding-left: 50px;  padding-top: 10px;">
+                        <span>◇ Material :</span>
+                        {{sell.material}}</a>
+                    </div>
+                    {{!-- 5 Kilogram --}}
+                    <div style="padding-left: 50px;  padding-top: 10px;">
+                        <span>◇ Kilogram :</span>
+                        {{sell.kilogram}}</a>
+                    </div>
+                    {{!-- 6 Birr --}}
+                    <div style="padding-left: 50px;  padding-top: 10px;  ">
+                        <span>◇ Birr :</span>
+                        {{sell.birr}}</a>
+                    </div>
+                    {{!-- 7 phone --}}
+                    <div style="padding-left: 50px;  padding-top: 10px;">
+                        <span>◇ Phone : </span>
+                        <span style="padding-left: 40px;">
+                            <a href="tel:  {{sell.phone}} ">
+                                {{sell.phone}}
+                            </a>
+                        </span>
+                    </div>
+                    {{!--8 Note --}}
+                    <div style="padding-left: 50px;  padding-top: 10px;">
+                        <span>◇ Note :</span>
+                        <span style="padding-left: 40px;">{{stripTags sell.note}}</span>
+                    </div>
+                    {{!--9 status --}}
+                    <div style="padding-left: 50px;  padding-top: 10px;">
+                        <span>◇ Status : </span>
+                        <span
+                            style="{{#eq sell.status 'Paid'}}color: #28a745;{{else}}color: #ff0000;{{/eq}}; padding-left: 40px;">
+                            {{sell.status}}
+                        </span>
+                    </div>
+                    {{!-- 10 car_id --}}
+                    <div style="padding-left: 50px;  padding-top:  10px;">
+                        <span>◇ Car_id :</span>
+                        {{sell.car_id}}</a>
+                    </div>
+                    {{!--11 Registered Date --}}
+                    <div style="padding-left: 50px;  padding-top: 10px;">
+                        <span>◇ Registered Date : </span>
+                        <span style="padding-left: 40px;"> {{formatDate sell.createdAt 'MMMM Do YYYY, h:mm:ss
+                            a'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="padding-left: 45px; padding-right: 45px; padding-top: 25px; ">
+            <div class="card text-center">
+                <div class="card-content">
+                    <div style="padding-top: 10px;">
+                        <span class="card-title">{{sell.user.displayName}}</span>
+                    </div>
+                    <div style="padding: 7px;">
+                        <img src="{{sell.user.image}}" class="rounded-circle responsive-img img-small"
+                            alt="sell poster image" style="height: 150px; width: 150px;">
+                    </div>
+                    <hr>
+                    <div class="card-action" style="padding-bottom: 13px;">
+                        <button type="button" class="btn  btn-primary link-unstyled text-decoration-none"
+                            style="background-color: #3498db; border-color: #3498db; "
+                            onmouseover="this.style.backgroundColor='#2980b9'"
+                            onmouseout="this.style.backgroundColor='#3498db'"
+                            onclick="window.location.href='/sell/user/{{sell.user._id}}'">
+                            More From {{sell.user.firstName}}
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
