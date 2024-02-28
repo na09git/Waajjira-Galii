@@ -26,43 +26,6 @@
                     guddina itti fufiinsa qabuu fi badhaadhina Aanaa Kombolchaaf gumaachu horachuu dha."
                 </p>
 
-
-
-                <div class="row gy-4" data-aos="fade-up" data-aos-delay="400" style="padding: 60px;">
-
-                    <div class="col-lg-3 col-6" style="background-color: aquamarine;">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span style="color: black;" data-purecounter-start="0" data-purecounter-end="232"
-                                data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Daldalaa</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                    {{!-- <div class="col-lg-3 col-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span style="color: black;" data-purecounter-start="0" data-purecounter-end="25"
-                                data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Years of Exprience</p>
-                        </div>
-                    </div><!-- End Stats Item --> --}}
-
-                    <div class="col-lg-3 col-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span style="color: black;" data-purecounter-start="0" data-purecounter-end="1453"
-                                data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Hojjataa</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span style="color: black;" data-purecounter-start="0" data-purecounter-end="102"
-                                data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Caasaa</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                </div>
             </div>
 
             <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out" style="padding-top: 100px;">
@@ -88,7 +51,7 @@
                     <div class="card info-card sales-card">
 
                         <div class="card-body">
-                            <h5 class="card-title">Sales <span>| Total</span></h5>
+                            <h5 class="card-title">Daldalaa <span>| Total</span></h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -110,7 +73,7 @@
                     <div class="card info-card sales-card">
 
                         <div class="card-body">
-                            <h5 class="card-title">bought <span>| Total</span></h5>
+                            <h5 class="card-title">Hojjattoota <span>| Total</span></h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -135,7 +98,7 @@
 
 
                         <div class="card-body">
-                            <h5 class="card-title">Customers <span>| Total</span></h5>
+                            <h5 class="card-title">Reports <span>| Total</span></h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -156,16 +119,15 @@
                 <div class="col-12">
                     <div class="card recent-sales overflow-auto">
                         <div class="card-body">
-                            <h5 class="card-title">Recent Sells</h5>
+                            <h5 class="card-title">Recently Registered</h5>
                             <table class="table table-borderless datatable">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Seller</th>
-                                        <th scope="col">Buyer</th>
-                                        <th scope="col">Material</th>
-                                        <th scope="col">Kilogram</th>
-                                        <th scope="col">Birr</th>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Daldalaa</th>
+                                        <th scope="col">Garee Daldalaa</th>
+                                        <th scope="col">Gibira Waggaa</th>
+                                        <th scope="col">Phone</th>
                                         <th scope="col">Status</th>
                                     </tr>
                                 </thead>
@@ -174,12 +136,12 @@
                                     {{#if @indexLessThan 5}} <!-- Limit loop to last 5 sells -->
                                     <tr>
                                         <th scope="row">{{@index}}</th>
-                                        <td>{{seller}}</td>
-                                        <td>{{buyer_name}}</td>
-                                        <td>{{material}}</td>
-                                        <td>{{kilogram}}</td>
-                                        <td>{{birr}}</td>
+                                        <td>{{daldalaa}}</td>
+                                        <td>{{gareedaldalaa}}</td>
+                                        <td>{{gibirawaggaa}}</td>
+                                        <td>{{phone}}</td>
                                         <td>{{status}}</td>
+
                                     </tr>
                                     {{/if}}
                                     {{/each}}
@@ -195,55 +157,50 @@
                     <div class="card recent-sales overflow-auto">
 
                         <div class="card-body">
-                            <h5 class="card-title">Recent Bought </h5>
+                            <h5 class="card-title">Recent Reports </h5>
 
                             <table class="table table-borderless datatable">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Customer</th>
-                                        <th scope="col">Product</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Status</th>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Dhimma</th>
+                                        <th scope="col">maqaa</th>
+                                        <th scope="col">ergaa</th>
+                                        <th scope="col">guyyaa</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <th scope="row"><a href="#">#2457</a></th>
-                                        <td>Brandon Jacob</td>
+                                        <td>ismail jemal</td>
+                                        <td>Rakkoo numudate</td>
                                         <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                                        <td>$64</td>
-                                        <td><span class="badge bg-success">Approved</span></td>
+                                        <td>2016</td>
+
                                     </tr>
                                     <tr>
                                         <th scope="row"><a href="#">#2147</a></th>
-                                        <td>Bridie Kessler</td>
+                                        <td>Bahar Kassim</td>
+                                        <td>Rakkoo numudate</td>
                                         <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a>
                                         </td>
-                                        <td>$47</td>
-                                        <td><span class="badge bg-warning">Pending</span></td>
+                                        <td>47</td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><a href="#">#2049</a></th>
-                                        <td>Ashleigh Langosh</td>
+                                        <td>Abdi Lami</td>
+                                        <td>Rakkoo numudate</td>
                                         <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                                        <td>$147</td>
-                                        <td><span class="badge bg-success">Approved</span></td>
+                                        <td>2014</td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><a href="#">#2644</a></th>
-                                        <td>Angus Grady</td>
+                                        <td>Jemal Grady</td>
+                                        <td>Rakkoo numudate</td>
                                         <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                                        <td>$67</td>
-                                        <td><span class="badge bg-danger">Rejected</span></td>
+                                        <td>2016</td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">#2644</a></th>
-                                        <td>Raheem Lehner</td>
-                                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                                        <td>$165</td>
-                                        <td><span class="badge bg-success">Approved</span></td>
-                                    </tr>
+
                                 </tbody>
                             </table>
 
