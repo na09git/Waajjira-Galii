@@ -4,7 +4,7 @@ const { ensureAuth, ensureAdmin } = require('../middleware/auth')
 const router = express.Router()
 
 const User = require('../models/User')
-const Sell = require('../models/Sell');
+const Registration = require('../models/Registration');
 
 
 
@@ -12,12 +12,12 @@ const Sell = require('../models/Sell');
 router.get('/admin', ensureAdmin, async (req, res) => {
   try {
     const user = req.user;
-    const sells = await Sell.find().populate('user').lean();
+    const registration = await registration.find().populate('user').lean();
 
     res.render('admin', {
       layout: admin,
       user: req.user, // Pass the user to the template if needed
-      sells: sells // Pass sell data to the template// Pass the user to the template
+      registration: registration // Pass sell data to the template// Pass the user to the template
     })
   } catch (err) {
     console.error(err)
@@ -29,13 +29,13 @@ router.get('/admin', ensureAdmin, async (req, res) => {
 
 //@desc Search admin by title
 //@route GET /admin/search/:query
-router.get('/search/:query', ensureAuth, async (req, res) => {
+router.get('/search/:query', async (req, res) => {
   try {
     const admin = await Admin.find({ name: new RegExp(req.query.query, 'i') })
       .populate('user')
       .sort({ createdAt: 'desc' })
       .lean();
-    res.render('admin/index', {
+    res.render('admin', {
       admin,
       layout: 'admin',
     });

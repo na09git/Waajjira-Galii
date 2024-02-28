@@ -21,8 +21,7 @@ const User = require('./models/User')
 
 const Report = require('./models/Report')
 const News = require('./models/News')
-const Sell = require('./models/Sell')
-const Buy = require('./models/Buy')
+const Registration = require('./models/Registration')
 const Worker = require('./models/Worker')
 
 
@@ -130,11 +129,9 @@ app.use('/contact', require('./routes/contact'));
 app.use('/vission', require('./routes/vission'));
 app.use('/privacy', require('./routes/privacy'));
 app.use('/terms', require('./routes/terms'));
-app.use('/sell', require('./routes/sell'));
-app.use('/buy', require('./routes/buy'));
+app.use('/registration', require('./routes/registration'));
 app.use('/worker', require('./routes/worker'));
 app.use('/profile', require('./routes/profile'));
-app.use('/rent', require('./routes/rent'));
 app.use('/note', require('./routes/note'));
 app.use('/about', require('./routes/about'));
 

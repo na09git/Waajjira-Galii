@@ -1,27 +1,38 @@
 const mongoose = require('mongoose')
 
-const BuySchema = new mongoose.Schema({
-    buyer_name:
+const RegistrationSchema = new mongoose.Schema({
+    daldalaa:
     {
         type: String,
         required: true,
     },
-    material: {
+    gareedaldalaa: {
         type: String,
-        default: 'Dinicha',
-        enum: ['Dinicha', 'Karot', 'Kurumba', 'Qayasir', 'Shunkurtaa', 'Shukaar', 'Timaatim', 'Luqqaa', 'Joniya', 'Car Material', 'Building Material', 'Other'],
+        default: 'A',
+        enum: ['A', 'B', 'C'],
     },
-    from_seller: {
+    araddaa: {
         type: String,
-        required: true,
+        default: '01',
+        enum: ['01', '02', '03'],
     },
     phone: {
         type: String,
     },
-    kilogram: {
+    bara: {
         type: String,
+        required: true,
     },
-    birr: {
+    gibirawaggaa: {
+        type: String,
+        required: true,
+    },
+    status: {
+        type: String,
+        default: 'Paid',
+        enum: ['Paid', 'Not-Paid'],
+    },
+    tin_number: {
         type: String,
         required: true,
     },
@@ -36,11 +47,6 @@ const BuySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    status: {
-        type: String,
-        default: 'Paid',
-        enum: ['Paid', 'Not-Paid'],
-    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -51,4 +57,4 @@ const BuySchema = new mongoose.Schema({
     },
 })
 
-module.exports = mongoose.model('Buy', BuySchema)
+module.exports = mongoose.model('Registration', RegistrationSchema)

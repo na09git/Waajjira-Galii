@@ -5,11 +5,11 @@
 </div>
 
 <div class="pagetitle">
-    <h1> Material Bought by Sena Business</h1>
+    <h1> Waajjirri Galii Daldalaa Aanaa Kombolchaa</h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item">Bought</li>
+            <li class="breadcrumb-item">Registration</li>
         </ol>
     </nav>
 </div>
@@ -18,22 +18,8 @@
 
 <div style="padding: 10px;">
     <h3 style="padding-top: 35px; padding-left: 38px;">Welcome {{name}}</h3>
-    <p style="padding-left: 20px;">This Are bought Materials List</p>
+    <p style="padding-left: 20px;">This Are Registrations List</p>
 
-    <p style="padding-left: 20px"> This Are Number of Paid Vs Not-Paid </p>
-
-    <!-- Add these h6 tags where you want to display the counts -->
-    <span style="color: red;">|</span>
-    <h6 id="paidCount"></h6>
-    <span style="color: red;">|</span>
-    <h6 id="notPaidCount"></h6>
-    <span style="color: red;">|</span>
-    <h6 id="weeklyTotalBirr"></h6>
-    <span style="color: red;">|</span>
-    <h6 id="monthlyTotalBirr"></h6>
-    <span style="color: red;">|</span>
-    <h6 id="totalBirr"></h6>
-    <!-- Display total Birr amount here -->
 
     <!-- Display total Birr amount here -->
 
@@ -44,12 +30,14 @@
             <tr>
                 <th>No.</th>
                 <th>Image</th>
-                <th>Buyer</th>
-                <th>Material</th>
-                <th>From_buyer</th>
+                <th>Sassaabaa</th>
+                <th>Abba Qabeenyaa</th>
+                <th></th>
                 <th>Phone</th>
                 <th>Kilogram</th>
                 <th>Birr</th>
+                <th>Tin.No</th>
+                <th>Araddaa</th>
                 <th>Status</th>
                 <th class="text-center">Note</th>
                 <th class="text-center">Date</th>
@@ -130,8 +118,23 @@
             {{/each}}
         </tbody>
     </table>
-
     {{else}}
     <p>No Bought to Display !</p>
     {{/if}}
+
+    <p style="padding-left: 20px"> This Are Number of Paid Vs Not-Paid </p>
+
+    <!-- Add these h6 tags where you want to display the counts -->
+    <span style="color: red;">|</span>
+    <h6 id="paidCount"></h6>
+    <span style="color: red;">|</span>
+    <h6 id="notPaidCount"></h6>
+    <span style="color: red;">|</span>
+    <h6 id="weeklyTotalBirr"></h6>
+    <span style="color: red;">|</span>
+    <h6 id="monthlyTotalBirr"></h6>
+    <span style="color: red;">|</span>
+    <h6 id="totalBirr"></h6>
+    <!-- Display total Birr amount here -->
+
 </div>

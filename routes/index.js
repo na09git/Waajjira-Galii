@@ -6,10 +6,8 @@ const User = require('../models/User')
 
 const Report = require('../models/Report')
 const News = require('../models/News')
-const Sell = require('../models/Sell')
-const Buy = require('../models/Buy')
+const Registration = require('../models/Registration')
 const Worker = require('../models/Worker')
-const Rent = require('../models/Rent')
 const Note = require('../models/Note')
 
 
@@ -37,7 +35,7 @@ router.get('/', ensureAuth, async (req, res) => {
 })
 
 // @desc    home
-// @route   GET /home
+// @route   GET /homes
 router.get('/home', ensureAuth, async (req, res) => {
   try {
     res.render('home')
@@ -119,24 +117,6 @@ router.get('/newspage', ensureAuth, async (req, res) => {
 })
 
 
-// @desc    sell
-// @route   GET /sell
-router.get('/sells', ensureAuth, ensureAdminOrWorker, async (req, res) => {
-  try {
-    const sell = await Sell.find({ user: req.user.id }).lean()
-    res.render('sells', {
-      layout: 'admin',
-      name: req.user.firstName,
-      image: req.user.image,
-      sell,
-    })
-    console.log("Dear Admin, You can see all Sell here in this Page !")
-  } catch (err) {
-    console.error(err)
-    res.render('error/500')
-  }
-})
-
 
 // @desc    Worker
 // @route   GET /worker
@@ -159,9 +139,9 @@ router.get('/workers', ensureAuth, ensureAdmin, async (req, res) => {
 
 // @desc    bought
 // @route   GET /bought
-router.get('/bought', ensureAuth, ensureAdminOrWorker, async (req, res) => {
+router.get('/registrations', ensureAuth, ensureAdminOrWorker, async (req, res) => {
   try {
-    const buy = await Buy.find({ user: req.user.id })
+    const registration = await Registration.find({ user: req.user.id })
       .populate('user')
       .sort({ createdAt: -1 })
       .lean();
@@ -170,9 +150,9 @@ router.get('/bought', ensureAuth, ensureAdminOrWorker, async (req, res) => {
       layout: 'admin',
       name: req.user.firstName,
       image: req.user.image,
-      buy,
+      registration,
     })
-    console.log("Dear Admin, You can see all Buy here in this Page !")
+    console.log("Dear Admin, You can see all registration here in this Page !")
   } catch (err) {
     console.error(err)
     res.render('error/500')
@@ -181,27 +161,6 @@ router.get('/bought', ensureAuth, ensureAdminOrWorker, async (req, res) => {
 
 
 
-// @desc    rents
-// @route   GET /rents
-router.get('/rents', ensureAuth, ensureAdmin, async (req, res) => {
-  try {
-    const rent = await Rent.find({ user: req.user.id })
-      .populate('user')
-      .sort({ createdAt: -1 })
-      .lean();
-
-    res.render('rents', {
-      name: req.user.firstName,
-      image: req.user.image,
-      rent,
-      layout: 'admin',
-    })
-    console.log("Dear Admin, You can see all Rent here in this Page !")
-  } catch (err) {
-    console.error(err)
-    res.render('error/500')
-  }
-})
 
 // @desc    notes
 // @route   GET /notes

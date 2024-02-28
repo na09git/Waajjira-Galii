@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="/img/ararso-favicon3.png" rel="icon">
-  <link href="/img/ararso-favicon3.png" rel="apple-touch-icon">
+  <link href="/img/waajjira-galii.png" rel="icon">
+  <link href="/img/waajjira-galii.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -62,14 +62,14 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="/admin" class="logo d-flex align-items-center">
-        <img src="/img/ararso-favicon3.png" alt="">
+        <img src="/img/waajjira-galii.png" alt="">
         <span class="d-none d-lg-block">Admin Page</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
     <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
+      <form class="search-form d-flex align-items-center" method="get" action="#">
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
@@ -88,7 +88,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="/img/ararso-favicon3.png" alt="Profile" class="rounded-circle">
+            <img src="/img/waajjira-galii.png" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">Waajjira Galii </span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -143,58 +143,34 @@
       </li>
       <!-- End Dashboard Nav -->
 
-      <!--Start Bought Components Bought -->
+      <!--Start registration Components registration -->
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Boughts</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>Registration</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
           <li>
-            <a href="/buy/addbuy">
-              <i class="bi bi-circle"></i><span>+ Buy</span>
+            <a href="/registration/register">
+              <i class="bi bi-circle"></i><span>+ register</span>
             </a>
           </li>
           <li>
-            <a href="/buy">
-              <i class="bi bi-circle"></i><span>Buy cards </span>
+            <a href="/registration">
+              <i class="bi bi-circle"></i><span>Registered cards </span>
             </a>
           </li>
           <li>
-            <a href="/bought">
-              <i class="bi bi-circle"></i><span>Bought All Dashboard</span>
+            <a href="/registration">
+              <i class="bi bi-circle"></i><span>Registration All Dashboard</span>
             </a>
           </li>
 
         </ul>
       </li>
-      <!-- End Bought Components Nav -->
+      <!-- End Registration Components Nav -->
 
 
-      <!-- Start Sell Forms Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Sells</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="/sell/addsell">
-              <i class="bi bi-circle"></i><span>+ Sell</span>
-            </a>
-          </li>
-          <li>
-            <a href="/sell">
-              <i class="bi bi-circle"></i><span>Sell Cards</span>
-            </a>
-          </li>
-          <li>
-            <a href="/sells">
-              <i class="bi bi-circle"></i><span>Selled Dashboard</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <!-- End Sell Forms Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
@@ -221,38 +197,12 @@
       <!-- End Tables Nav -->
 
 
-      <!-- Start Rental/Kiraa -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Rental/Kiraa</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="/rent/addrent">
-              <i class="bi bi-circle"></i><span>+ Rent</span>
-            </a>
-          </li>
-          <li>
-            <a href="/rent">
-              <i class="bi bi-circle"></i><span>Rent Cards</span>
-            </a>
-          </li>
-          <li>
-            <a href="/rents">
-              <i class="bi bi-circle"></i><span>Rents Dashboard</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <!-- End Rental/Kiraa -->
-
-
       <!-- Start My Notes -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>My Notes</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>My Notes</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/note/add">
               <i class="bi bi-circle"></i><span>+ My Notes</span>
@@ -270,7 +220,7 @@
           </li>
         </ul>
       </li>
-      <!-- End Icons Nav -->
+      <!-- End Rental/Kiraa -->
 
 
 
@@ -418,23 +368,7 @@
       },
     });
 
-    new DataTable('#data_buy', {
-      layout: {
-        topStart: {
-          buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-        }
-      },
-    });
-    new DataTable('#data_sell', {
-      layout: {
-        topStart: {
-          buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-        }
-      },
-    });
-
-
-    new DataTable('#data_rent', {
+    new DataTable('#data_registration', {
       layout: {
         topStart: {
           buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
