@@ -3,11 +3,11 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 <div class="pagetitle" style="padding-top: 10px;">
-    <h1> Material Bought By Sena Business</h1>
+    <h1>Waajjira Galiiwwan Aanaa Kombolchaa </h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item">Buy</li>
+            <li class="breadcrumb-item">Daldaltoota Galmeeeffaman </li>
         </ol>
     </nav>
 </div>
@@ -15,11 +15,11 @@
 
 <div class="row" style="padding: 20px; ">
     <div class="col-3">
-        <h3 class="display-6 " style=" padding-top:15px; padding-bottom:20px; padding-left:30px;">buys</h3>
+        <h3 class="display-6 " style=" padding-top:15px; padding-bottom:20px; padding-left:30px;">registrations</h3>
     </div>
 
     <div class="col">
-        <form id="search-site" action='/buy/search/:query' method='get' class="mb-4"
+        <form id="search-site" action='/registration/search/:query' method='get' class="mb-4"
             style="padding-left: 100px; padding-right: 100px;">
             <div class="input-group" style="padding-top: 30px;">
                 <span class="input-group-text"><i class="fas fa-search fa-lg"></i></span>
@@ -35,19 +35,20 @@
 
 
     <div class="row" style="padding-bottom: 30px; padding-left: 30px; padding-right: 30px;">
-        {{#each buy as |row index| }}
+        {{#each registration as |row index| }}
         <div class="col-12 col-md-4">
             <div class="card mb-4">
                 <div class="card-img-top">
-                    <a href="/buy/edit/{{row._id}}" class="btn p-2 btn-float text-primary">
+                    <a href="/registration/edit/{{row._id}}" class="btn p-2 btn-float text-primary">
                         <i class="fas fa-edit fa-lg mx-1"></i>
                     </a>
                 </div>
 
-                {{!-- 1 --}}
+                {{!-- 1 photo daldalaa --}}
                 <div class="card ">
                     {{#if imageBase64}}
-                    <img src='data:{{contentType}};base64,{{imageBase64}}' width="auto" height="160" class="buy image">
+                    <img src='data:{{contentType}};base64,{{imageBase64}}' width="auto" height="160"
+                        class="registration image">
                     {{else}}
                     <img src="images/no_image.png" width="auto" height="230" class="img-thumbnail">
                     {{/if}}
@@ -55,27 +56,45 @@
 
                 <div class="card-body text-center">
                     {{!-- 2 --}}
-                    <p>{{buyer_name}}</p>
+                    <p>{{name}}</p>
                     {{!-- 3 --}}
-                    <p>{{material}}</p>
+                    <p>{{tessoo}}</p>
                     {{!-- 4 --}}
-                    <p>{{from_seller}}</p>
+                    <p>{{gosadaldalaa}}</p>
                     {{!-- 5 --}}
+                    <p>{{lakkgabatee}}</p>
+                    {{!-- 6 --}}
+                    <p>{{sadarkaa}}</p>
+                    {{!-- 7 --}}
+                    <p>{{gosagt}}</p>
+                    {{!-- 8 --}}
+                    <p>{{araddaa}}</p>
+                    {{!-- 9 --}}
                     <p>
                         <a href="tel: {{phone}}"> {{phone}}</a>
                     </p>
-                    {{!-- 6 --}}
-                    <p>{{kilogram}}</p>
-                    {{!-- 7 --}}
-                    <p>{{birr}}</p>
-                    {{!-- 8 --}}
+
+                    {{!-- bara / only in detail page --}}
+
+                    {{!-- 10 --}}
+                    <p>{{gibirawaggaa}}</p>
+                    {{!-- 11 --}}
+                    <p>{{murtiiergaiyyate}}</p>
+                    {{!-- 12 --}}
+                    <p>{{tin_number}}</p>
+                    {{!-- 13 --}}
+                    <p>{{body}}</p>
+                    {{!-- 14 --}}
                     <p class="title" style="padding-bottom: 10px;">
-                        <a href="/buy/{{row._id}}">
+                        <a href="/registration/{{row._id}}">
                             <p>{{stripTags (truncate body 40)}}</p>
                         </a>
                     </p>
-                    {{!-- 9 --}}
-                    <div style="padding-left: 65px;">
+
+
+
+                    {{!-- 15 --}}
+                    {{!-- <div style="padding-left: 65px;">
                         <p class="card-title p-2 d-block " style="align-items:center;padding-left: 50px; padding-right: 40px;
                         {{#eq row.status 'Paid'}}background-color: #9EE47E;width: 100px;
                         {{else}}background-color: #FF3232; width: 100px;
@@ -84,25 +103,30 @@
                                 {{status}}
                             </span>
                         </p>
-                    </div>
+                    </div> --}}
+
+
+
+
                     {{!-- user email --}}
                     <div class="chip gap-0 ">
                         <img style="height: 35px; weight: 35px;" class="chip-img rounded" src="{{user.image}}"
                             alt="{{user.image}}">
                         <a style="text-decoration: none; background-color:#e9e0e0; border-radius:20px; padding-top:6px; padding-bottom:8px; padding-left:20px; padding-right:20px;"
-                            href="mailto: /buy/user/{{buy.user._id}}" class="chip-link">
+                            href="mailto: /registration/user/{{registration.user._id}}" class="chip-link">
                             Selled By {{user.firstName}}
                         </a>
                     </div>
 
                 </div>
                 <div class="card-footer text-center">
-                    <a href="/buy/{{row._id}}" class="btn btn-secondary">Read More</a>
+                    <a href="/registration/{{row._id}}" class="btn btn-secondary">Odeeffannoo Dabalataaf</a>
                 </div>
             </div>
         </div>
         {{else}}
-        <p class="col-12 text-center">No Bought to display!</p>
+        <p class="col-12 text-center">Daldalaan galmaa'e hinjiru!</p>
+        <p class="col-12 text-center">Amma irraa jalqabdanii galmeessun hojii of irraa salphiisaa!!!</p>
         {{/each}}
     </div>
 </div>

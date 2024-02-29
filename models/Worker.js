@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const multer = require('multer');
 
 const WorkerSchema = new mongoose.Schema({
     name:
@@ -9,15 +8,14 @@ const WorkerSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        trim: true,
     },
     phone: {
         type: String,
     },
     position: {
         type: String,
-        default: 'Worker',
-        enum: ['Worker', 'Partner', 'Children', 'Wife', 'Driver', 'Security', 'Cashier', 'Director'],
+        default: 'Murtii-fi-Odiitii',
+        enum: ['Murtii-fi-Odiitii', 'Sassaabbi-fi-Hordoffii-Galii', 'Barumsa-Kaffaltii-Gibiraa'],
     },
     salary: {
         type: String,

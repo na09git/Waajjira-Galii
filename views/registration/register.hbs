@@ -1,5 +1,5 @@
 <div class="pagetitle" style="padding-top: 10px;">
-    <h1> Waajjirri Galii Daldalaa Aanaa Kombolchaa </h1>
+    <h1>Waajjira Galiiwwan Aanaa Kombolchaa </h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -9,113 +9,295 @@
     </nav>
 </div>
 <!-- End Page Title -->
+<div class="container row "
+    style="padding-top: 2%; padding-right:5%; padding-left:30px ; align-items:center; justify-content:center;">
+    <div class=" bg-info bg-opacity-10 border border-info border-start-0 rounded-end" style="padding-top: 20px; ">
 
-<div class="row p-2 ">
-    <form action="/registration" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
-        <!--- 1 Maqaa Daldalaa --->
-        <div class="mb-1 col-md-4 col-lg-2 col-xl-4 mx-auto">
-            <label for="title" class="form-label" required>Maqaa Daldalaa</label>
-            <input type="name" class="form-control" id="daldalaa" name="daldalaa" placeholder="Maqaa daldalaa">
-        </div>
-        <!--- 2 gareedaldalaa --->
-        <div class="mb-1 col-md-4 col-lg-2 col-xl-4 mx-auto ">
-            <label for="gareedaldalaa" class="form-label">Garee Daldalaa</label>
-            <select class="form-select" id="gareedaldalaa" name="gareedaldalaa">
-                <option value="A" selected>A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-
-            </select>
-        </div>
-        <!--- 3 araddaa --->
-        <div class="mb-1 col-md-4 col-lg-2 col-xl-4 mx-auto ">
-            <label for="araddaa" class="form-label">Araddaa</label>
-            <select class="form-select" id="araddaa" name="araddaa">
-                <option value="01" selected>01</option>
-                <option value="02">02</option>
-                <option value="03">03</option>
-                <option value="04">04</option>
-                <option value="05">05</option>
-                <option value="06">06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-            </select>
-        </div>
-        <!--- 4 Phone--->
-        <div class="mb-1 col-md-4 col-lg-2 col-xl-4 mx-auto">
-            <label for="text" class="form-label ">Phone</label>
-            <input type="phone" class="form-control " id="phone" name="phone" placeholder="Enter Phone">
-        </div>
-        <!--- 5 bara --->
-        <div class="mb-1 col-md-4 col-lg-2 col-xl-4 mx-auto ">
-            <label for="bara" class="form-label">Bara</label>
-            <select class="form-select" id="bara" name="bara">
-                <option value="2017">2014</option>
-                <option value="2017">2015</option>
-                <option value="2016" selected>2016</option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2018">2019</option>
-                <option value="2018">2020</option>
-
-            </select>
-        </div>
-        <!--- 6 gibirawaggaa --->
-        <div class="mb-1 col-md-4 col-lg-2 col-xl-4 mx-auto">
-            <label for="title" class="form-label" required>Gibira Waggaa Qarshiin </label>
-            <input type="gibirawaggaa " class="form-control" id="gibirawaggaa" name="gibirawaggaa"
-                placeholder="Gibira Waggaa ">
-        </div>
-        <!--- 7 status --->
-        <div class="mb-1 col-md-4 col-lg-2 col-xl-4 mx-auto ">
-            <label for="status" class="form-label">Status</label>
-            <select class="form-select" id="status" name="status">
-                <option value="Paid" selected>Paid</option>
-                <option value="Not-Paid">Not-Paid</option>
-            </select>
-        </div>
-        <!--- 8 tin_number --->
-        <div class="mb-1 col-md-4 col-lg-2 col-xl-4 mx-auto">
-            <label for="title" class="form-label" required>Tin-Number kan Daldalaa </label>
-            <input type="tin_number " class="form-control" id="tin_number" name="tin_number" placeholder="Tin Number ">
-        </div>
-        <!--- 9 body --->
-        <div class="mb-1 col-md-4 col-lg-2 col-xl-4 mx-auto">
-            <label for="title" class="form-label" required>Yadannoo/Note </label>
-            <input type="text " class="form-control" id="body" name="body" placeholder="Yadannoo ">
+        <div class="row text-center align-items:center; justify-content:center;;"
+            style="align-items: center; padding-left: 20px;  padding-right: 20px; padding-top: 15px; padding-bottom: 30px;">
+            <h3 class="bg-primary p-1"
+                style="--bs-bg-opacity: .2; padding-left: 40px; padding-top: 70px; align-items:center; justify-content:center;">
+                Odeeffannoo Daldalaa Dabalii </h3>
         </div>
 
-        <!--- 10 Image Daldalaa --->
-        <div class="mb-1 col-md-4 col-lg-6 col-xl-4 mx-auto">
-            <label for="image1" class="form-label">Photo Daldalaa</label>
-            <input type="file" class="form-control" id="image1" name="images">
-        </div>
-        <!--- 11 Image Ragaa --->
-        <div class="mb-1 col-md-4 col-lg-6 col-xl-4 mx-auto">
-            <label for="image2" class="form-label">Photo Ragaa</label>
-            <input type="file" class="form-control" id="image2" name="images">
+        <div class="row p-2 ">
+            <form action="/registration" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+                <!--- 1 Maqaa Daldalaa --->
+                <div class="mb-2 col-md-6 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label" required> Maqaa Daldalaa</label>
+                    <input style="padding: 10px;" type="name" class="form-control" id="name" name="name"
+                        placeholder="Maqaa daldalaa">
+                </div>
+                <!--- 2 Tessoo --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Tessoo Daldalaa</label>
+                    <input style="padding: 10px;" type="text" class="form-control" id="tessoo" name="tessoo"
+                        placeholder="tessoo daldalaa galchii">
+                </div>
+                <!--- 3 Gosa Daldalaa --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto ">
+                    <label for="gosadaldalaa" class="form-label">Gosa Daldalaa</label>
+                    <select class="form-select" id="gosadaldalaa" name="gosadaldalaa">
+                        <option value="Muramaa" selected>Muramaa</option>
+                        <option value="Tilmaama-1101">Tilmaama-1101</option>
+                        <option value="Tilmaama-1103">Tilmaama-1103</option>
+                        <option value="Tilmaama-1103">Tilmaama-ToT</option>
+                        <option value="Tilmaama-1103">Tilmaama-VAT-1199</option>
+                    </select>
+                </div>
+                <!--- 4 Lakkofsa Gabatee  --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Lakkofsa Gabatee </label>
+                    <input style="padding: 10px;" type="text" class="form-control" id="lakkgabatee" name="lakkgabatee"
+                        placeholder="Lakkofsa Gabatee">
+                </div>
+                <!--- 5 Sadarkaa Daldalaa --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto ">
+                    <label for="sadarkaa" class="form-label">Sadarkaa Daldalaa</label>
+                    <select class="form-select" id="sadarkaa" name="sadarkaa">
+                        <option value="A" selected>A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+                </div>
+                <!--- 6 Gosa Gibira Taksii --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto ">
+                    <label for="gosagt" class="form-label"> Gosa Gibira Taksii</label>
+                    <select class="form-select" id="gosagt" name="gosagt">
+                        <option value="1101">1101</option>
+                        <option value="1103">1103</option>
+                        <option value="ToT">ToT</option>
+                        <option value="VAT-1199">VAT-1199</option>
+                    </select>
+                </div>
+                <!--- 7 araddaa --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto ">
+                    <label for="araddaa" class="form-label">Araddaa</label>
+                    <select class="form-select" id="araddaa" name="araddaa">
+                        <option value="Araddaa_01" selected>Araddaa_01</option>
+                        <option value="Araddaa_02">Araddaa_02</option>
+                        <option value="Laga-Haamaa">Laga-Haamaa</option>
+                        <option value="Iftoha">Iftoha</option>
+                        <option value="Samargeel">Samargeel</option>
+                        <option value="Sibilu">Sibilu</option>
+                        <option value="H-Bilisummaa">H-Bilisummaa</option>
+                        <option value="Tuulaa">Tuulaa</option>
+                        <option value="G-Raaboo">G-Raaboo</option>
+                        <option value="Sarkama">Sarkama</option>
+                        <option value="Saamte">Saamte</option>
+                        <option value="Ijiginnaa">Ijiginnaa</option>
+                        <option value="Qeerrensa">Qeerrensa</option>
+                        <option value="Bilisummaa">Bilisummaa</option>
+                        <option value="Eeguu">Eeguu</option>
+                        <option value="W-Mohammed">W-Mohammed</option>
+                        <option value="Wadddeessa">Wadddeessa</option>
+                        <option value="Bu-Nagayaa">Bu-Nagayaa</option>
+                        <option value="Bakkee">Bakkee</option>
+                        <option value="'Bu-Diin">'Bu-Diin</option>
+                        <option value="Xaaxessaa">Xaaxessaa</option>
+                        <option value="W-Lameen">W-Lameen</option>
+                        <option value="Qaqalli">Qaqalli</option>
+                    </select>
+                </div>
+                <!--- 8 Phone--->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="text" class="form-label ">Phone</label>
+                    <input style="padding: 10px;" type="phone" class="form-control " id="phone" name="phone"
+                        placeholder="Phone">
+                </div>
+
+
+                <!--- correction  --->
+                <!--- 9 gibirawagaa15 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Gibira Waggaa Qarshiin 2015</label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="gibirawagaa15"
+                        name="gibirawagaa15" placeholder="Gibira Waggaa Bara 2015">
+                </div>
+                <!--- 9 Murtii Erga Iyyattee --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Murtii Erga Iyyattee isaaf Sirrefameef 2015 </label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="murtiiergaiyyate15"
+                        name="murtiiergaiyyate15" placeholder="Murtii Erga Iyyattee isaaf Sirrefameef 2015">
+                </div>
+                <!--- 9 bara15 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto ">
+                    <label for="bara15" class="form-label">Bara 2015</label>
+                    <select class="form-select" id="bara15" name="bara15">
+                        <option value="2015-PAID" selected>2015-PAID</option>
+                        <option value="2015-NOT-PAID">2015-NOT-PAID</option>
+                    </select>
+                </div>
+                <!--- correction --->
+
+                <!--- correction  --->
+                <!--- 10 gibirawagaa16 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Gibira Waggaa Qarshiin 2016</label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="gibirawagaa16"
+                        name="gibirawagaa16" placeholder="Gibira Waggaa Bara 2016">
+                </div>
+                <!--- 10 Murtii Erga Iyyattee --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Murtii Erga Iyyattee isaaf Sirrefameef 2016</label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="murtiiergaiyyate16"
+                        name="murtiiergaiyyate16" placeholder="Murtii Erga Iyyattee isaaf Sirrefameef 2016">
+                </div>
+                <!--- 10 bara16 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto ">
+                    <label for="bara16" class="form-label">Bara 2016</label>
+                    <select class="form-select" id="bara16" name="bara16">
+                        <option value="2016-PAID">2016-PAID</option>
+                        <option value="2016-NOT-PAID" selected>2016-NOT-PAID</option>
+                    </select>
+                </div>
+                <!--- correction --->
+
+                <!--- correction  --->
+                <!--- 11 gibirawagaa17 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Gibira Waggaa Qarshiin 2017</label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="gibirawagaa17"
+                        name="gibirawagaa17" placeholder="Gibira Waggaa Bara 2017">
+                </div>
+                <!--- 11 Murtii Erga Iyyattee --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Murtii Erga Iyyattee isaaf Sirrefameef 2017</label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="murtiiergaiyyate17"
+                        name="murtiiergaiyyate17" placeholder="Murtii Erga Iyyattee isaaf Sirrefameef 2017">
+                </div>
+                <!--- 11 bara17 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto ">
+                    <label for="bara17" class="form-label">Bara 2017</label>
+                    <select class="form-select" id="bara17" name="bara17">
+                        <option value="...We-Are-Approaching-2017" selected>...We-Are-Approaching-2017</option>
+                        <option value="2017-PAID">2017-PAID</option>
+                        <option value="2017-NOT-PAID">2017-NOT-PAID</option>
+                    </select>
+                </div>
+                <!--- correction --->
+
+
+                <!--- correction  --->
+                <!--- 12 gibirawagaa18 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Gibira Waggaa Qarshiin 2018</label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="gibirawagaa18"
+                        name="gibirawagaa18" placeholder="Gibira Waggaa Bara 2018">
+                </div>
+                <!--- 12 Murtii Erga Iyyattee --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Murtii Erga Iyyattee isaaf Sirrefameef 2018</label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="murtiiergaiyyate18"
+                        name="murtiiergaiyyate18" placeholder="Murtii Erga Iyyattee isaaf Sirrefameef 2018">
+                </div>
+                <!--- 12 bara18 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto ">
+                    <label for="bara18" class="form-label">Bara 2018</label>
+                    <select class="form-select" id="bara18" name="bara18">
+                        <option value="...We-Are-Approaching-2018" selected>...We-Are-Approaching-2018</option>
+                        <option value="2018-PAID">2018-PAID</option>
+                        <option value="2018-NOT-PAID">2018-NOT-PAID</option>
+                    </select>
+                </div>
+                <!--- correction --->
+
+
+                <!--- correction  --->
+                <!--- 13 gibirawagaa19 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Gibira Waggaa Qarshiin 2019</label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="gibirawagaa19"
+                        name="gibirawagaa19" placeholder="Gibira Waggaa Bara 2019">
+                </div>
+                <!--- 13 Murtii Erga Iyyattee --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Murtii Erga Iyyattee isaaf Sirrefameef 2019</label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="murtiiergaiyyate19"
+                        name="murtiiergaiyyate19" placeholder="Murtii Erga Iyyattee isaaf Sirrefameef 2019">
+                </div>
+                <!--- 13 bara19 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto ">
+                    <label for="bara19" class="form-label">Bara 2019</label>
+                    <select class="form-select" id="bara19" name="bara19">
+                        <option value="...We-Are-Approaching-2019" selected>...We-Are-Approaching-2019</option>
+                        <option value="2019-PAID">2019-PAID</option>
+                        <option value="2019-NOT-PAID">2019-NOT-PAID</option>
+                    </select>
+                </div>
+                <!--- correction --->
+
+
+                <!--- correction  --->
+                <!--- 14 gibirawagaa20 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Gibira Waggaa Qarshiin 2020</label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="gibirawagaa20"
+                        name="gibirawagaa20" placeholder="Gibira Waggaa Bara 2020">
+                </div>
+                <!--- 14 Murtii Erga Iyyattee --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Murtii Erga Iyyattee isaaf Sirrefameef 2020</label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="murtiiergaiyyate20"
+                        name="murtiiergaiyyate20" placeholder="Murtii Erga Iyyattee isaaf Sirrefameef 2020">
+                </div>
+                <!--- 14 bara20 --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto ">
+                    <label for="bara20" class="form-label">Bara 2020</label>
+                    <select class="form-select" id="bara20" name="bara20">
+                        <option value="...We-Are-Approaching-2020" selected>...We-Are-Approaching-2020</option>
+                        <option value="2020-PAID">2020-PAID</option>
+                        <option value="2020-NOT-PAID">2020-NOT-PAID</option>
+                    </select>
+                </div>
+                <!--- correction --->
+
+
+                <!--- 15 tin_number -->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Tin-Number kan Daldalaa </label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="tin_number" name="tin_number"
+                        placeholder="Tin Number">
+                </div>
+                <!--- 16 lakknagahee -->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Tin-Number kan Daldalaa </label>
+                    <input style="padding: 10px;" type="text " class="form-control" id="lakknagahee" name="lakknagahee"
+                        placeholder="Lakkofsa Nagahee">
+                </div>
+                <!--- 17 adabbii --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto ">
+                    <label for="bara20" class="form-label">Bara 2019</label>
+                    <select class="form-select" id="bara20" name="bara20">
+                        <option value="Dhala-Baankii" selected>Dhala-Baankii</option>
+                        <option value="Adabbii">Adabbii</option>
+                    </select>
+                </div>
+                <!--- 18 body --->
+                <div class="mb-2 col-md-4 col-lg-2 col-xl-6 mx-auto">
+                    <label for="title" class="form-label">Yadannoo/Note </label>
+                    <input type="text " class="form-control" id="body" name="body" placeholder="Yadannoo ">
+                </div>
+
+                <!--- 19 Image Daldalaa --->
+                <div class="mb-2 col-md-4 col-lg-6 col-xl-6 mx-auto">
+                    <label for="image1" class="form-label">Photo Daldalaa</label>
+                    <input type="file" class="form-control" id="image1" name="images">
+                </div>
+                <!--- 20 Image Ragaa --->
+                <div class="mb-2 col-md-4 col-lg-6 col-xl-6 mx-auto">
+                    <label for="image2" class="form-label">Photo Waraqaa Qulqullinaa</label>
+                    <input type="file" class="form-control" id="image2" name="images">
+                </div>
+
+                <!--- 21 Action --->
+                <div class="mb-3 col-md-6 col-lg-2 col-xl-6 mx-auto" style="padding-top: 10px;">
+                    <button type="submit" class="btn btn-primary">+ Dabalii </button>
+                    <a href="/registrations" class="btn btn-warning">Cancel</a>
+                </div>
+
+            </form>
         </div>
 
-        <!--- 12 Action --->
-        <div class="mb-3 col-md-6 col-lg-2 col-xl-4 mx-auto" style="padding-top: 10px;">
-            <button type="submit" class="btn btn-primary">+ Dabalii </button>
-            <a href="/registrations" class="btn btn-warning">Cancel</a>
-        </div>
-
-    </form>
+    </div>
 </div>

@@ -35,48 +35,103 @@ router.get('/register', ensureAuth, ensureAdminOrWorker, (req, res) => {
 
 // @desc Process add registration form with image upload
 // @route POST /registration
-router.post('/', ensureAuth, ensureAdminOrWorker, upload.array('images', 5), async (req, res) => {
+// router.post('/', ensureAuth, ensureAdminOrWorker, upload.array('images', 5), async (req, res) => {
+//     try {
+//         const files = req.files;
+
+//         if (!files || files.length === 0) {
+//             const error = new Error('Please choose files');
+//             error.httpStatusCode = 400;
+//             throw error;
+//         }
+
+//         let encode_images = [];
+//         let contentTypes = [];
+
+//         for (let i = 0; i < files.length; i++) {
+//             const img = fs.readFileSync(files[i].path);
+//             encode_images.push(img.toString('base64'));
+//             contentTypes.push(files[i].mimetype);
+//         }
+
+//         const newUpload = new Registration({
+//             ...req.body,
+//             user: req.user.id,
+//             imageBase64: encode_images, // Assuming you have a field called 'imageBase64' in your schema
+//             contentType: contentTypes, // Assuming you have a field called 'contentType' in your schema
+//         });
+
+//         try {
+//             await newUpload.save();
+//             res.redirect('/registrations');
+//             console.log("New registration with multiple images uploaded");
+
+//         } catch (error) {
+//             if (error.name === 'MongoError' && error.code === 11000) {
+//                 return res.status(400).json({ error: `Duplicate files. Some files already exist! ` });
+//             }
+//             return res.status(500).json({ error: error.message || `Cannot upload files. Something is missing!` });
+//         }
+//     } catch (err) {
+//         console.error(err);
+//         res.status(400).json({ error: err.message || 'Internal Server Error' });
+//     }
+// });
+
+// Handle registration form submission
+router.post('/registration', ensureAuth, ensureAdminOrWorker, upload.array('images', 5), async (req, res) => {
     try {
-        const files = req.files;
+        // Extract form data
+        const { name, tessoo, gosadaldalaa, lakkgabatee, sadarkaa, gosagt, araddaa, phone, bara, gibirawaggaa, murtiiergaiyyate, status, tin_number, lakknagahee, adabbii, body } = req.body;
 
-        if (!files || files.length === 0) {
-            const error = new Error('Please choose files');
-            error.httpStatusCode = 400;
-            throw error;
+        // Check if image data exists
+        if (!req.files || Object.keys(req.files).length === 0) {
+            return res.status(400).json({ error: 'No image provided' });
         }
 
-        let encode_images = [];
-        let contentTypes = [];
+        // Access the uploaded image file
+        const image = req.files.images;
 
-        for (let i = 0; i < files.length; i++) {
-            const img = fs.readFileSync(files[i].path);
-            encode_images.push(img.toString('base64'));
-            contentTypes.push(files[i].mimetype);
-        }
+        // Convert image to base64 format
+        const imageBase64 = image.data.toString('base64');
 
-        const newUpload = new Registration({
-            ...req.body,
-            user: req.user.id,
-            imageBase64: encode_images, // Assuming you have a field called 'imageBase64' in your schema
-            contentType: contentTypes, // Assuming you have a field called 'contentType' in your schema
+        // Get the content type of the image
+        const contentType = image.mimetype;
+
+        // Create new registration record
+        const registration = new Registration({
+            name,
+            tessoo,
+            gosadaldalaa,
+            lakkgabatee,
+            sadarkaa,
+            gosagt,
+            araddaa,
+            phone,
+            bara,
+            gibirawaggaa,
+            murtiiergaiyyate,
+            status,
+            tin_number,
+            lakknagahee,
+            adabbii,
+            body,
+            imageBase64,
+            contentType,
+            // Assuming you have a user ID available in the request
+            user: req.user._id // Assuming user ID is available after authentication
         });
 
-        try {
-            await newUpload.save();
-            res.redirect('/registrations');
-            console.log("New registration with multiple images uploaded");
+        // Save registration record to database
+        await registration.save();
 
-        } catch (error) {
-            if (error.name === 'MongoError' && error.code === 11000) {
-                return res.status(400).json({ error: `Duplicate files. Some files already exist! ` });
-            }
-            return res.status(500).json({ error: error.message || `Cannot upload files. Something is missing!` });
-        }
-    } catch (err) {
-        console.error(err);
-        res.status(400).json({ error: err.message || 'Internal Server Error' });
+        res.status(201).json({ message: 'Registration successful', registration });
+    } catch (error) {
+        console.error('Error occurred during registration:', error);
+        res.status(500).json({ error: 'An internal server error occurred' });
     }
 });
+
 
 
 
